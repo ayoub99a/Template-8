@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>University Website Design</title>
+        <!-- Poppins Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome Library -->
+        <link rel="stylesheet" href="css/all.min.css">
+        <!-- Main CSS File -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Start Header -->
+        <header class = "sub-header">
+            <nav>
+                <a href="index.html"><img src="imgs/logo.png"></a>
+                <div class="nav-links">
+                    <ul id = "navi">
+                        <i class="fa fa-times close-menu" onclick = "hidemenu();"></i>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="course.html">course</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars toggle-menu" onclick = "showmenu();"></i>
+            </nav>
+                <h2 class = "sub-heading">about us</h2>
+        </header>
+
+        <!-- End Header -->
+
+        <!-- Start Content -->
+
+        <div class="main-section content">
+            <div class="row">
+                <div class="content-col">
+                    <h2>
+                        We are the world's largest university
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolor nisi voluptates est repellendus dolores possimus. Non odit accusamus consequuntur aliquam minima? Repudiandae optio quos ad aperiam deleniti suscipit consectetur! Hic sed delectus ab, dolorem eaque vitae nobis eveniet nisi praesentium at animi, exercitationem eius itaque aliquam iusto ad ut.
+                    </p>
+                    <a href = "#" class = "hero-btn red-btn">explore now</a>
+                </div>
+                <div class="content-col">
+                    <img src="imgs/about.jpg" alt="About">
+                </div>
+            </div>
+        </div>
+
+        <!-- End Content -->
+
+        <!-- Start About us -->
+
+        <div class="about">
+            <h2></h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam provident soluta<br> voluptates debitis ut dicta obcaecati commodi itaque perferendis atque.
+            </p>
+            <div class="social">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="copyright">
+                made with 
+                <i class="far fa-heart"></i>
+                by Easy Tutorials
+            </div>
+        </div>
+
+        <!-- End About us  -->
+        <script>
+
+            var navia = document.getElementById("navi");
+
+            function showmenu(){
+                navia.style.right = "0";
+            }
+            function hidemenu(){
+                navia.style.right = "-200px";
+
+            }
+
+        </script>
+    </body>
+</html>
