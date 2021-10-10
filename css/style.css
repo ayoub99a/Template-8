@@ -26,7 +26,42 @@ nav {
     position: relative
 }
 
-nav a img {width: 150px}
+nav a {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+nav a span {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden
+}
+
+nav a span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    color: #F44336;
+    transition: 0.5s
+}
+
+nav a .logo {
+    color: #F44336;
+    transition: 0.5s
+}
+
+nav a:hover span::before {
+    left: 0
+}
+
+nav a:hover .logo {color: white}
 
 nav .nav-links {flex: 1}
 
@@ -76,18 +111,59 @@ nav .nav-links ul li a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center
+    text-align: center;
+    
 }
 
 .text-box h2 {
     font-size: 62px;
     text-transform: capitalize;
+    position: relative;
+    overflow: hidden
+}
+
+.text-box h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: -45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: right;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    color: #F44336;
+
+}
+
+.text-box h2:hover::before {
+    top: 50%;
+    transform-origin: bottom;
+    transition: 0.5s
 }
 
 .text-box p {
     margin: 10px 0 40px;
     font-size: 14px
 }
+
+.text-box .image {
+    width: 200px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: upAndDown 7s linear infinite
+}
+
+.text-box .image img {width: 100%}
+
+@keyframes upAndDown {
+    0%, 100% {top: 100%}
+    25%, 75% {top: 125%}
+    50% {top: 150%}
+}
+
 
 @media(max-width: 767px) {
     nav .fa {
@@ -328,10 +404,45 @@ nav .nav-links ul li a {
     padding: 12px 34px;
     position: relative;
     cursor: pointer;
-    transition: 1s
+    transition: 3s
 }
 
-.hero-btn:hover {border-color: #F44336;background: #F44336}
+.hero-btn:hover {border-color: #F44336;background: #ff6c62}
+
+
+.hero-btn::before,
+.hero-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #4A5060;
+    z-index: -1;
+    transition: 0.5s
+}
+
+.hero-btn::after {
+    right: auto;
+    left: -20px;
+}
+
+.hero-btn:hover::before,
+.hero-btn:hover::after {
+    width: 50%;
+    height: 100%;
+    background: #F00;
+    border-radius: 0px;
+    right: 0
+}
+
+.hero-btn:hover::after {
+    left: 0;
+    right: auto
+}
 
 .row {
     display: flex;
@@ -543,3 +654,5 @@ nav .nav-links ul li a {
 
 
 /* End Contact us Page */
+
+

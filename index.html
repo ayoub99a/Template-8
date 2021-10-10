@@ -9,6 +9,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Page Icon -->
+        <link rel = "Icon" href = "imgs/page icon.png">
         <!-- Font Awesome Library -->
         <link rel="stylesheet" href="css/all.min.css">
         <!-- Main CSS File -->
@@ -18,7 +20,10 @@
         <!-- Start Header -->
         <header>
             <nav>
-                <a href="index.html"><img src="imgs/logo.png"></a>
+                <a href="index.html">
+                    <i class="fas fa-graduation-cap fa-2x logo"></i>
+                    <span data-text = "Eduford">Eduford</span> 
+                </a>
                 <div class="nav-links">
                     <ul id = "navi">
                         <i class="fa fa-times close-menu" onclick = "hidemenu();"></i>
@@ -32,11 +37,15 @@
                 <i class="fa fa-bars toggle-menu" onclick = "showmenu();"></i>
             </nav>
             <div class="text-box">
-                <h2>world's biggest university</h2>
+                <h2 class = "fill-h" data-text = "world's biggest university">
+                    world's biggest university
+                </h2>
                 <p>
                     making website is now one of the easiest thing in the world. you just need to learn HTML, CSS,<br/>JavaScript and you are good to go.
                 </p>
-                <a href="" class = "hero-btn">visit us to know more</a>
+                <div class="image">
+                    <img src="imgs/animated .jfif" alt="">
+                </div>
             </div>
         </header>
 
@@ -197,7 +206,7 @@
             <div class="copyright">
                 made with 
                 <i class="far fa-heart"></i>
-                by Easy Tutorials
+                by Ayoub Jasim
             </div>
         </div>
 
