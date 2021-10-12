@@ -205,10 +205,57 @@ nav .nav-links ul li a {
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
+    position: relative;
     transition: 0.5s
 }
 
-.course .course-col:hover {box-shadow: 0 0 20px #DDD}
+.course .course-col::before,
+.course .course-col::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    background: #FF5722;
+    width: 2px;
+    height: 0;
+    transition: 0.5s
+}
+
+.course .course-col .tp-border,
+.course .course-col .bt-border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FF5722;
+    width: 0;
+    height: 2px;
+    transition: 0.5s
+}
+
+.course .course-col .bt-border {
+    bottom: auto;
+    top: 0
+}
+
+.course .course-col::after {
+    left: auto;
+    right: 0;
+}
+
+.course .course-col:hover {
+    box-shadow: 0 0 20px #DDD;
+    transform: scale(1.05)
+}
+
+.course .course-col:hover::before, 
+.course .course-col:hover::after {
+    height: 100%
+}
+
+.course .course-col:hover .tp-border,
+.course .course-col:hover .bt-border {width: 100%}
 
 .course .course-col h3 {
     text-transform: capitalize;
@@ -274,7 +321,12 @@ nav .nav-links ul li a {
 
 .row .faci-col img {
     width: 100%;
-    border-radius: 10px
+    border-radius: 10px;
+    transition: 0.5s
+}
+
+.row .faci-col img:hover {
+    transform: scale(1.1) rotate(1deg)
 }
 
 .row .faci-col h3 {
@@ -301,8 +353,59 @@ nav .nav-links ul li a {
     align-items: flex-start;
     gap: 0 40px;
     border-radius: 10px;
-    cursor: pointer
+    cursor: pointer;
+    position: relative
 }
+
+.testimonials .testi-col > .rt-border {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 0%;
+    background: #ff5722;
+    transition: 0.5s
+}
+
+.testimonials .testi-col > .bt-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #FF5722;
+    transition: 0.5s
+}
+
+.testimonials .testi-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #FF5722;
+    transition: 0.5s
+}
+
+.testimonials .testi-col::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0%;
+    width: 2px;
+    background: #FF5722;
+    transition: 0.5s
+}
+
+.testimonials .testi-col:hover > .rt-border {height: 100%}
+
+.testimonials .testi-col:hover > .bt-border {width: 100%}
+
+.testimonials .testi-col:hover::before {width: 100%}
+
+.testimonials .testi-col:hover::after {height: 100%}
 
 .testimonials .testi-col img {width: 50px;border-radius: 50%}
 
@@ -370,10 +473,14 @@ nav .nav-links ul li a {
 
 .main-section {
     width: 80%;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center
+    text-align: center;
+    position: relative;
 }
+
 
 .section-heading {
     width: 100%;
