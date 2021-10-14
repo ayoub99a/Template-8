@@ -35,7 +35,7 @@ nav a {
 }
 
 nav a span {
-    font-size: 22px;
+    font-size: 32px;
     font-weight: bold;
     position: relative;
     overflow: hidden
@@ -54,7 +54,8 @@ nav a span::before {
 
 nav a .logo {
     color: #F44336;
-    transition: 0.5s
+    transition: 0.5s;
+    font-size: 32px
 }
 
 nav a:hover span::before {
@@ -80,7 +81,7 @@ nav .nav-links ul {
 }
 
 nav .nav-links ul li {
-    padding: 8px 12px;
+    padding: 8px 16px;
     position: relative
 }
 
@@ -101,7 +102,7 @@ nav .nav-links ul li a {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
-    font-size: 13px
+    font-size: 20px
 }
 
 .text-box {
@@ -119,13 +120,13 @@ nav .nav-links ul li a {
     font-size: 62px;
     text-transform: capitalize;
     position: relative;
-    overflow: hidden
+    /* overflow: hidden */
 }
 
 .text-box h2::before {
     content: attr(data-text);
     position: absolute;
-    top: -45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transform-origin: right;
@@ -136,11 +137,6 @@ nav .nav-links ul li a {
 
 }
 
-.text-box h2:hover::before {
-    top: 50%;
-    transform-origin: bottom;
-    transition: 0.5s
-}
 
 .text-box p {
     margin: 10px 0 40px;
@@ -300,11 +296,14 @@ nav .nav-links ul li a {
     width: 100%
 }
 
+
 .campus .campus-col:hover::before {width: 100%}
 
 .campus .campus-col:hover::after {left: 50%}
 
 .campus img {width: 100%;display: block}
+
+.campus .campus-col img::selection {background:transparent}
 
 /* End Campus Section */
 
@@ -483,10 +482,29 @@ nav .nav-links ul li a {
 
 
 .section-heading {
-    width: 100%;
+    width: fit-content;
+    margin: 0 auto;
     font-size: 36px;
     font-weight: 600;
     text-transform: capitalize;
+    position: relative;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 1px #555;
+}
+
+.section-heading::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    -webkit-text-fill-color: #FF5722;
+    overflow: hidden;
+    height: 0%;
+    transition: 0.5s
+}
+
+.section-heading:hover::before {
+    height: 100%
 }
 
 .section-p{
@@ -685,17 +703,52 @@ nav .nav-links ul li a {
     padding-top: 20px
 }
 
-.blog .blog-right div {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px 15px;
+.blog .blog-right .cats {
+    padding: 10px 0
 }
 
-.blog .blog-right div span {
-    text-transform: capitalize;
+.blog .blog-right .cats div {
+    padding: 10px 10px 25px;
+    position: relative;
     color: #888;
-    font-weight: 600
+    transition: 0.5s
 }
+
+.blog .blog-right .cats div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #FF5722;
+    z-index: -1;
+    transition: 0.7s
+}
+
+.blog .blog-right .cats div:hover {color: white}
+
+.blog .blog-right .cats div:hover::before {
+    width: 100%
+}
+
+.blog .blog-right .cats div span {
+    text-transform: capitalize;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.blog .blog-right .cats div .cat {
+    left: 10px
+}
+
+.blog .blog-right .cats div .prog {
+    right: 10px
+}
+
 
 @media (max-width: 767px) {
     .sub-header .sub-heading {font-size: 28px}
@@ -726,8 +779,15 @@ nav .nav-links ul li a {
 
 .contact-us .contact-us-col div i {
     color: #F44336;
-    font-size: 24px
+    font-size: 24px;
+    animation: heart-effect 2s infinite
 }
+
+@keyframes heart-effect {
+    from {transform: scale(1)}
+    to {transform: scale(1.3)}
+}
+
 
 .contact-us .contact-us-col div span {display: block}
 
