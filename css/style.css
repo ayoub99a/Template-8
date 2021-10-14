@@ -514,7 +514,7 @@ nav .nav-links ul li a {
     padding: 12px 34px;
     position: relative;
     cursor: pointer;
-    transition: 3s
+    transition: 1.5s
 }
 
 .hero-btn:hover {border-color: #F44336;background: #ff6c62}
@@ -631,16 +631,12 @@ nav .nav-links ul li a {
 .blog > * {margin-bottom: 50px}
 
 .blog a {
-    display: block;
-    background: #F44336;
-    text-decoration: none;
-    text-transform: capitalize;
-    color: white;
-    padding: 10px;
+    color: #F44336;
+    border: 2px solid #F44336;
     font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center
 }
+
+.blog a:hover {color: white}
 
 .blog .blog-left {flex-basis: 65%}
 
